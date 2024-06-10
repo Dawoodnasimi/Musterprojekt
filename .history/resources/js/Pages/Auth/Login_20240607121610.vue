@@ -1,0 +1,31 @@
+<script setup>
+import { useForm } from "@inertiajs/vue3";
+import TextInput from "../Components/TextInput.vue";
+
+const form = useForm({
+  email: "",
+  password: "",
+});
+
+const submit = () => {
+  form.post("/register", {
+    onSuccess: () => {
+      console.log("Success");
+    },
+    onError: () => {
+      form.reset("password");
+    },
+  });
+};
+</script>
+
+<template>
+  <Head title="Login" />
+  <h1 class="title">Login</h1>
+
+  <div class="flex items-center justify-center min-h-screen pt-10 bg-gray-200">
+    <div class="w-full max-w-md">
+      <!-- Da wir mit Inertia Out-of-the-box CSRF Schutz haben, brauchen wir nicht uns darum zu kuemmern -->
+    </div>
+  </div>
+</template>

@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .avatar {
+        @apply w-9 h-9 rounded-full;
+    }
+}
+

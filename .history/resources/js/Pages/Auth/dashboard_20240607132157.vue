@@ -1,0 +1,14 @@
+<script setup>
+const ucwords = (str) =>
+  str.replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
+</script>
+
+<template>
+  <Head :title="$page.component" />
+
+  <div class="text-center">
+    <h1 class="text-4xl font-bold text-gray-800 mx-auto">
+      Welcome back {{ ucwords($page.props.auth.user.name) }}
+    </h1>
+  </div>
+</template>
